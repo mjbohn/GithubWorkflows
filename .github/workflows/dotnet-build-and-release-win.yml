@@ -16,6 +16,11 @@ on:
         required: false
         type: string
         default: app.zip
+      branch:
+       description: 'Branch zum Auschecken'
+       required: false
+       default: 'master'
+       type: string
       configuration:
         description: 'Build-Konfiguration (z. B. Release oder Debug)'
         required: false
