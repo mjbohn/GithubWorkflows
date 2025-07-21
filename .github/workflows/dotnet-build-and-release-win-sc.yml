@@ -58,7 +58,7 @@ jobs:
 
       - name: Publish
         run: |
-          if [[ "${{ github.event.inputs.selfContained }}" == "true" ]]; then
+          if ( ${{ github.event.inputs.selfContained }} == "true" ); then
             dotnet publish ${{ inputs.project_path }} -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:IncludeAllContentForSelfExtract=true
           else
             dotnet publish ${{ inputs.project_path }} -c ${{ inputs.configuration }} -o publish_output
