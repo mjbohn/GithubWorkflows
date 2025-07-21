@@ -65,8 +65,8 @@ jobs:
             dotnet publish ${{ inputs.project_path }} -c ${{ inputs.configuration }} -o publish_output
           fi
           
-      - name: Zip output
-        run: Compress-Archive -Path publish_output/* -DestinationPath ${{ inputs.zip_name }}
+ #     - name: Zip output
+ #       run: Compress-Archive -Path publish_output/* -DestinationPath ${{ inputs.zip_name }}
 
       - name: Check if tag exists
         id: check_tag
